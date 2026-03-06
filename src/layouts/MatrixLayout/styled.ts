@@ -27,6 +27,28 @@ export const MatrixLayoutWrapper = styled.div`
     background: rgba(255, 255, 255, 0.3) !important;
   }
 
+  // 顶部
+  .matrix-layout-header {
+    .matrix-top-nav-header.matrix-top-nav-header-light {
+      .matrix-base-menu-horizontal {
+        .matrix-base-menu-horizontal-menu-item {
+          border-radius: 8px;
+          &:not(:last-child) {
+            margin-inline-end: 8px;
+          }
+          &.ant-menu-item-active:active {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: #1677ff;
+          }
+          &.ant-menu-item-selected {
+            background-color: rgba(22, 119, 255, 0.08);
+            color: #1677ff;
+          }
+        }
+      }
+    }
+  }
+
   // 侧边栏菜单
   .matrix-sider {
     .ant-layout-sider-children {
