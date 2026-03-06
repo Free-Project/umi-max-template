@@ -1,37 +1,26 @@
-import React from 'react';
 import {
-  Layout,
-  Card,
-  Typography,
-  Row,
-  Col,
-  Avatar,
-  Button,
-  Badge,
-  Divider,
-} from 'antd';
-import {
-  HomeOutlined,
-  UserOutlined,
-  FileTextOutlined,
-  AuditOutlined,
   CheckCircleOutlined,
+  ClockCircleOutlined,
   EditOutlined,
   FileDoneOutlined,
-  LogoutOutlined,
-  ClockCircleOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
+import {
+  Avatar,
+  Badge,
+  Button,
+  Card,
+  Col,
+  Divider,
+  Layout,
+  Row,
+  Typography,
+} from 'antd';
+import React from 'react';
 import styles from './index.less';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 const { Title, Text } = Typography;
-
-const menuItems = [
-  { key: 'home', icon: <HomeOutlined />, label: '首页' },
-  { key: 'patent', icon: <FileTextOutlined />, label: '专利撰写' },
-  { key: 'task', icon: <AuditOutlined />, label: '任务管理' },
-  { key: 'expert-review', icon: <CheckCircleOutlined />, label: '专家审核' },
-];
 
 const statsData = [
   {
@@ -78,58 +67,19 @@ const recentActivities = [
   },
 ];
 
-const HeaderComponent = () => (
-  <Header className={styles.header}>
-    <div className={styles.headerLeft}>
-      <div className={styles.logo}>
-        <div className={styles.logoIcon}>
-          <span>PL</span>
-        </div>
-        <Text strong className={styles.logoText}>
-          PatLeap
-        </Text>
-      </div>
-      <div className={styles.navMenu}>
-        {menuItems.map((item) => (
-          <div key={item.key} className={styles.navItem}>
-            {item.icon}
-            <span>{item.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className={styles.headerRight}>
-      <div className={`${styles.userInfo} ${styles.userInfoActive}`}>
-        <UserOutlined />
-        <span>张三</span>
-      </div>
-      <div className={styles.logout}>
-        <LogoutOutlined />
-        <span>退出</span>
-      </div>
-    </div>
-  </Header>
-);
-
 const UserInfoCard = () => (
   <Card className={styles.userInfoCard}>
     <div className={styles.userProfile}>
-      <Avatar
-        size={80}
-        icon={<UserOutlined />}
-        className={styles.userAvatar}
-      />
+      <Avatar size={80} icon={<UserOutlined />} className={styles.userAvatar} />
       <div className={styles.userDetails}>
-        <Text strong className={styles.userName}>张三</Text>
+        <Text strong className={styles.userName}>
+          张三
+        </Text>
         <Text className={styles.userContact}>zhangsan@example.com</Text>
         <Text className={styles.userContact}>138****8888</Text>
       </div>
     </div>
-    <Button
-      icon={<EditOutlined />}
-      className={styles.editBtn}
-      block
-    >
+    <Button icon={<EditOutlined />} className={styles.editBtn} block>
       编辑资料
     </Button>
   </Card>
@@ -141,15 +91,21 @@ const StatsCard = () => (
       <div className={styles.statsIcon}>
         <FileDoneOutlined />
       </div>
-      <Text strong className={styles.statsTitle}>使用统计</Text>
+      <Text strong className={styles.statsTitle}>
+        使用统计
+      </Text>
     </div>
     <div className={styles.statsList}>
-      {statsData.map((stat, index) => (
+      {statsData.map((stat) => (
         <div key={stat.label} className={styles.statsItem}>
           <div className={styles.statsItemContent}>
             <div className={styles.statsItemHeader}>
               <Text className={styles.statsLabel}>{stat.label}</Text>
-              <Text strong className={styles.statsValue} style={{ color: stat.color }}>
+              <Text
+                strong
+                className={styles.statsValue}
+                style={{ color: stat.color }}
+              >
                 {stat.value}
               </Text>
             </div>
@@ -168,9 +124,13 @@ const ActivityCard = () => (
         <div className={styles.activityIcon}>
           <ClockCircleOutlined />
         </div>
-        <Text strong className={styles.activityTitle}>最近活动</Text>
+        <Text strong className={styles.activityTitle}>
+          最近活动
+        </Text>
       </div>
-      <Button type="link" className={styles.viewAllBtn}>查看全部</Button>
+      <Button type="link" className={styles.viewAllBtn}>
+        查看全部
+      </Button>
     </div>
     <div className={styles.activityList}>
       {recentActivities.map((activity, index) => (
@@ -178,7 +138,9 @@ const ActivityCard = () => (
           <div className={styles.activityItem}>
             <div className={styles.activityContent}>
               <div className={styles.activityRow}>
-                <Text strong className={styles.activityName}>{activity.title}</Text>
+                <Text strong className={styles.activityName}>
+                  {activity.title}
+                </Text>
                 <Badge
                   className={styles.activityBadge}
                   status="success"
@@ -204,12 +166,13 @@ const ActivityCard = () => (
 const UserCenterPage: React.FC = () => {
   return (
     <Layout className={styles.userCenterContainer}>
-      <HeaderComponent />
       <Content className={styles.content}>
         <div className={styles.contentInner}>
           {/* Page Header */}
           <div className={styles.pageHeader}>
-            <Title level={3} className={styles.pageTitle}>用户中心</Title>
+            <Title level={3} className={styles.pageTitle}>
+              用户中心
+            </Title>
             <Text className={styles.pageSubTitle}>
               管理您的账户信息和使用记录
             </Text>

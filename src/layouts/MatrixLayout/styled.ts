@@ -11,11 +11,24 @@ export const HeaderTitleLogo = styled.div`
   & > h3,
   & > h4 {
     margin-bottom: 0;
-    padding-left: 12px;
-    font-size: 16px;
+    padding-left: 8px;
+    font-size: 20px;
     font-weight: 500;
     cursor: pointer;
   }
+`;
+
+export const LogoIcon = styled.div`
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
 `;
 
 export const MatrixLayoutWrapper = styled.div`
@@ -25,6 +38,37 @@ export const MatrixLayoutWrapper = styled.div`
   // 背景颜色
   .matrix-layout-bg-list {
     background: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  // 顶部
+  .matrix-layout-header {
+    .matrix-top-nav-header.matrix-top-nav-header-light {
+      .matrix-top-nav-header-menu {
+        .matrix-base-menu-horizontal {
+          .matrix-base-menu-horizontal-menu-item {
+            border-radius: 8px;
+            &:not(:last-child) {
+              margin-inline-end: 8px;
+            }
+            &.ant-menu-item-active:active {
+              background-color: rgba(0, 0, 0, 0.05);
+              color: #1677ff;
+            }
+            &.ant-menu-item-selected {
+              background-color: rgba(22, 119, 255, 0.08);
+              color: #1677ff;
+            }
+          }
+        }
+      }
+      .ant-pro-global-header-right-content {
+        .ant-pro-global-header-header-actions-avatar {
+          .ant-avatar {
+            color: rgba(0, 0, 0, 0.45);
+          }
+        }
+      }
+    }
   }
 
   // 侧边栏菜单

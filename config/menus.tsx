@@ -1,72 +1,47 @@
 import React from 'react';
 import {
-  FileDoneOutlined,
   HomeOutlined,
+  CheckSquareOutlined,
+  FieldTimeOutlined,
+  FormOutlined,
   ProductOutlined,
-  TableOutlined
+  UserOutlined
 } from '@ant-design/icons';
 
 export const menus = [
-  {
-    path: '/',
-    redirect: '/home',
-  },
   {
     path: '/',
     component: '@/layouts/FrontLayout',
     routes: [
       {
         name: '首页',
-        path: '/home',
-        component: './Home',
+        path: '/',
+        component: '@/pages/Home',
         icon: <HomeOutlined />,
       },
       {
-        name: 'Table',
-        path: '/table',
-        component: './Table',
-        icon: <TableOutlined />,
+        name: '专利撰写',
+        path: '/write',
+        component: '@/pages/PatentWrite',
+        icon: <FormOutlined />
       },
       {
-        name: '权限演示',
-        path: '/access',
-        component: './Access',
-        icon: <FileDoneOutlined />,
-        routes: [
-          {
-            name: '权限演示-子页面',
-            path: '/access/child',
-            component: './Access/Child',
-          },
-        ]
+        name: '任务管理',
+        path: '/task',
+        component: '@/pages/TaskManagement',
+        icon: <FieldTimeOutlined />,
       },
       {
-        name: '专利',
-        path: '/patent',
-        component: '@/pages/Patent',
-        icon: <FileDoneOutlined />,
-        routes: [
-          {
-            name: '专利撰写',
-            path: '/patent/write',
-            component: '@/pages/Patent/PatentWrite',
-          },
-          {
-            name: '任务管理',
-            path: '/patent/task',
-            component: '@/pages/Patent/TaskManagement',
-          },
-          {
-            name: '专家审核',
-            path: '/patent/review',
-            component: '@/pages/Patent/ExpertReview',
-          },
-          {
-            name: '用户中心',
-            path: '/patent/userCenter',
-            component: '@/pages/Patent/UserCenter',
-          },
-        ],
+        name: '专家审核',
+        path: '/review',
+        component: '@/pages/PatentReview',
+        icon: <CheckSquareOutlined />,
+      },
+      {
+        name: '用户中心',
+        path: '/userCenter',
+        component: '@/pages/UserCenter',
+        icon: <UserOutlined />,
       },
     ],
   },

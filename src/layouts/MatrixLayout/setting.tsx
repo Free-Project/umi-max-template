@@ -1,9 +1,9 @@
 import { getUser } from '@/utils';
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { LogoutOutlined, QuestionCircleOutlined, UserOutlined } from '@ant-design/icons';
 import { history } from '@umijs/max';
-import { Tooltip } from 'antd';
+import { Dropdown, Tooltip } from 'antd';
 import React from 'react';
-import { HeaderTitleLogo } from './styled';
+import { HeaderTitleLogo, LogoIcon } from './styled';
 
 // 用户信息
 const user = getUser();
@@ -15,26 +15,42 @@ export const setting = {
   headerTitleRender: (_logo: any, title: any) => {
     return (
       <HeaderTitleLogo>
-        <img src="https://mdn.alipayobjects.com/huamei_ez1ofb/afts/img/A*Mmi_TLH8fesAAAAAQDAAAAgAevicAQ/original" />
+        <LogoIcon>PL</LogoIcon>
         {title || <h3>Patent</h3>}
       </HeaderTitleLogo>
     );
   },
   // 头像
   avatarProps: {
-    src:
-      user?.avatarUrl ||
-      'https://work.antgroup-inc.cn/photo/default.140x140.jpg',
+    src: user?.avatarUrl || <UserOutlined />,
     title: user?.nickName || user?.name || '',
     size: 'small' as const,
     render: (_avatarProps: any, avatarDom: React.ReactNode) => {
-      return avatarDom;
+      return (
+        <Dropdown
+          menu={{
+            items: [
+              {
+                key: 'user',
+                label: <a><UserOutlined /> 个人中心</a>,
+              },
+              {
+                key: 'logout',
+                label: <a><LogoutOutlined /> 退出</a>,
+              },
+            ],
+          }}
+          placement="bottomLeft"
+        >
+          {avatarDom}
+        </Dropdown>
+      );
     },
   },
   // 操作项
   actionsRender: () => {
     const actionOpen = () => {
-      window.open('https://taobao.com', '_blank');
+      window.open('/', '_blank');
     };
     return [
       <Tooltip title={'产品说明文档'} key="helpDoc">

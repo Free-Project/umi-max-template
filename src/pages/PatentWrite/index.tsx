@@ -14,7 +14,6 @@ import {
   Collapse,
 } from 'antd';
 import {
-  LeftOutlined,
   FileTextOutlined,
   BulbOutlined,
   QuestionCircleOutlined,
@@ -24,7 +23,6 @@ import {
   ReloadOutlined,
   AppstoreOutlined,
 } from '@ant-design/icons';
-import HeaderNav from '../components/HeaderNav';
 import styles from './index.less';
 
 const { Title, Text } = Typography;
@@ -102,15 +100,6 @@ const PatentWriting: React.FC = () => {
 
   return (
     <div className={styles.patentWritingPage}>
-      {/* 顶部导航栏 */}
-      <HeaderNav activePath="/patent/write" />
-
-      {/* 返回按钮 */}
-      <div className={styles.backLink}>
-        <LeftOutlined />
-        <span>返回首页</span>
-      </div>
-
       {/* 主内容区 */}
       <div className={styles.mainContent}>
         <Row gutter={24}>

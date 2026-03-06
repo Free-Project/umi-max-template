@@ -5,18 +5,8 @@ import {
   StarFilled,
   UserOutlined,
 } from '@ant-design/icons';
-import {
-  Avatar,
-  Badge,
-  Button,
-  Card,
-  Col,
-  Row,
-  Tag,
-  Typography,
-} from 'antd';
+import { Avatar, Badge, Button, Card, Col, Row, Tag, Typography } from 'antd';
 import React from 'react';
-import HeaderNav from '../components/HeaderNav';
 import styles from './index.less';
 
 const { Title, Text, Paragraph } = Typography;
@@ -226,24 +216,18 @@ const AboutSection = () => (
 
 const ExpertReviewPage: React.FC = () => {
   return (
-    <>
-      <div className={styles.headerNav}>
-        <HeaderNav activePath="/patent/review" />
+    <div className={styles.reviewContainer}>
+      {/* Page Header */}
+      <div className={styles.pageHeader}>
+        <Title level={4}>专家审核</Title>
+        <Text className={styles.subTitle}>
+          专业人员对您的专利文档进行全面审核，确保质量和合规性
+        </Text>
       </div>
-      <div className={styles.content}>
-        {/* Page Header */}
-        <div className={styles.pageHeader}>
-          <Title level={4}>专家审核</Title>
-          <Text className={styles.subTitle}>
-            专业人员对您的专利文档进行全面审核，确保质量和合规性
-          </Text>
-        </div>
-
-        <ReviewProcessCard />
-        <CurrentReviewCard />
-        <AboutSection />
-      </div>
-    </>
+      <ReviewProcessCard />
+      <CurrentReviewCard />
+      <AboutSection />
+    </div>
   );
 };
 
