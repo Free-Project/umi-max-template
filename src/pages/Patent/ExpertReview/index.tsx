@@ -129,7 +129,7 @@ const ReviewProcessCard = () => (
 );
 
 const CurrentReviewCard = () => (
-  <Card className={styles.reviewCard} bodyStyle={{ padding: 0 }}>
+  <Card className={styles.reviewCard}>
     {/* Header */}
     <div className={styles.reviewHeader}>
       <div className={styles.reviewTitle}>
