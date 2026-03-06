@@ -1,13 +1,18 @@
 {
+  "name": "umi-max-template",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "max dev",
     "build": "max build",
+    "dev": "max dev",
+    "devs": "cross-env MOCK=none max dev",
     "format": "prettier --cache --write .",
-    "prepare": "husky",
     "postinstall": "max setup",
+    "lint": "max lint",
+    "lint:fix": "max lint --fix",
+    "prepare": "husky install",
     "setup": "max setup",
-    "start": "npm run dev"
+    "test": "max test"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
@@ -17,15 +22,16 @@
     "styled-components": "^6.3.11"
   },
   "devDependencies": {
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
-    "@types/styled-components": "^5.1.36",
-    "husky": "^9",
+    "@ali/ci": "^4.43.0",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.1",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7",
-    "prettier-plugin-organize-imports": "^3.2.2",
-    "prettier-plugin-packagejson": "^2.4.3",
-    "typescript": "^5.0.3"
+    "typescript": "^4.1.2"
   },
-  "__npminstall_done": false
+  "engines": {
+    "install-node": "20"
+  }
 }
