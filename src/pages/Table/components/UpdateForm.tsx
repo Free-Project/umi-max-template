@@ -33,7 +33,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => (
       return (
         <Modal
           width={640}
-          destroyOnClose
+          destroyOnHidden
           title="规则配置"
           open={props.updateModalVisible}
           footer={submitter}
