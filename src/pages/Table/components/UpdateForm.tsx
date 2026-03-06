@@ -33,9 +33,9 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => (
       return (
         <Modal
           width={640}
-          destroyOnHidden
           title="规则配置"
           open={props.updateModalVisible}
+          destroyOnHidden
           footer={submitter}
           onCancel={() => props.onCancel()}
         >
