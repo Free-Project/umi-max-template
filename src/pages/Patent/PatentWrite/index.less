@@ -1,0 +1,456 @@
+.patentWritingPage {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+
+  // 主内容区
+  .mainContent {
+    padding: 0 48px 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  // 表单卡片
+  .formCard {
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02);
+
+    :global {
+      .ant-card-body {
+        padding: 32px;
+      }
+    }
+  }
+
+  // 标题区
+  .titleSection {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .titleIcon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
+    border-radius: 12px;
+
+    svg {
+      font-size: 28px;
+      color: #fff;
+    }
+  }
+
+  .titleContent {
+    flex: 1;
+  }
+
+  .mainTitle {
+    margin: 0 0 8px !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #262626 !important;
+  }
+
+  .subTitle {
+    font-size: 14px;
+    color: #8c8c8c;
+  }
+
+  // 表单样式
+  .patentForm {
+    :global {
+      .ant-form-item {
+        margin-bottom: 24px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .ant-form-item-label {
+        padding-bottom: 8px;
+
+        > label {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .formLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+
+    .labelIcon {
+      color: #1677ff;
+      font-size: 16px;
+    }
+
+    .required {
+      color: #ff4d4f;
+      margin-left: 4px;
+    }
+
+    .helpIcon {
+      color: #bfbfbf;
+      font-size: 14px;
+      cursor: help;
+      margin-left: 4px;
+
+      &:hover {
+        color: #8c8c8c;
+      }
+    }
+  }
+
+  .formInput {
+    height: 44px;
+    border-radius: 8px;
+    border-color: #d9d9d9;
+
+    &:hover,
+    &:focus {
+      border-color: #1677ff;
+    }
+
+    &::placeholder {
+      color: #bfbfbf;
+    }
+  }
+
+  .formTextArea {
+    border-radius: 8px;
+    border-color: #d9d9d9;
+    padding: 12px;
+
+    &:hover,
+    &:focus {
+      border-color: #1677ff;
+    }
+
+    &::placeholder {
+      color: #bfbfbf;
+    }
+  }
+
+  .formSelect {
+    :global {
+      .ant-select-selector {
+        height: 44px !important;
+        border-radius: 8px !important;
+        border-color: #d9d9d9 !important;
+
+        .ant-select-selection-placeholder {
+          line-height: 42px;
+          color: #262626;
+        }
+
+        .ant-select-selection-item {
+          line-height: 42px;
+        }
+      }
+
+      .ant-select-arrow {
+        color: #262626;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // 技术标签区域
+  .tagSection {
+    background-color: #fafafa;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  .tagSectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .tagIcon {
+    color: #1677ff;
+    font-size: 16px;
+  }
+
+  .tagTitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+  }
+
+  .tagFormItem {
+    margin-bottom: 0 !important;
+  }
+
+  .tagGroup {
+    width: 100%;
+  }
+
+  .tagCheckbox {
+    font-size: 14px;
+    color: #595959;
+
+    :global {
+      .ant-checkbox-inner {
+        border-radius: 4px;
+      }
+    }
+
+    &:hover {
+      color: #1677ff;
+    }
+  }
+
+  // 折叠面板
+  .moreInfoCollapse {
+    margin-bottom: 24px;
+
+    :global {
+      .ant-collapse-header {
+        padding: 16px 0 !important;
+        align-items: center !important;
+      }
+
+      .ant-collapse-content-box {
+        padding: 0 0 16px !important;
+      }
+    }
+  }
+
+  .collapseHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+  }
+
+  .collapseIcon {
+    color: #1677ff;
+  }
+
+  .collapseExtra {
+    font-size: 13px;
+    color: #8c8c8c;
+  }
+
+  .additionalFormItem {
+    margin-bottom: 0 !important;
+  }
+
+  // 提交按钮
+  .submitBtn {
+    height: 52px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(22, 119, 255, 0.3);
+
+    &:hover {
+      background: linear-gradient(135deg, #4096ff 0%, #1677ff 100%);
+    }
+
+    .btnArrow {
+      margin-left: 8px;
+    }
+  }
+
+  // 进度卡片
+  .progressCard {
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02);
+
+    :global {
+      .ant-card-body {
+        padding: 24px;
+      }
+    }
+  }
+
+  .progressHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .progressDot {
+    width: 8px;
+    height: 8px;
+    background-color: #1677ff;
+    border-radius: 50%;
+  }
+
+  .progressTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #262626;
+  }
+
+  .progressInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .progressLabel {
+    font-size: 14px;
+    color: #595959;
+  }
+
+  .progressPercent {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1677ff;
+  }
+
+  .progressBar {
+    margin-bottom: 20px;
+
+    :global {
+      .ant-progress-inner {
+        background-color: #f0f0f0;
+      }
+
+      .ant-progress-bg {
+        height: 8px !important;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .progressList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .progressItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .progressItemDot {
+      width: 6px;
+      height: 6px;
+      background-color: #d9d9d9;
+      border-radius: 50%;
+    }
+
+    .progressItemLabel {
+      font-size: 14px;
+      color: #8c8c8c;
+    }
+
+    &.completed {
+      .progressItemDot {
+        background-color: #1677ff;
+      }
+
+      .progressItemLabel {
+        color: #262626;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 提示卡片
+  .tipsCard {
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02);
+
+    :global {
+      .ant-card-body {
+        padding: 20px 24px;
+      }
+    }
+  }
+
+  .tipsHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .tipsIcon {
+    font-size: 16px;
+    color: #1677ff;
+  }
+
+  .tipsTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #262626;
+  }
+
+  .tipsContent {
+    margin-bottom: 12px;
+  }
+
+  .tipItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tipCheckIcon {
+    font-size: 16px;
+    color: #1677ff;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tipText {
+    font-size: 14px;
+    color: #595959;
+    line-height: 1.6;
+  }
+
+  .tipsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .tipsListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tipsListDot {
+    width: 6px;
+    height: 6px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+  }
+
+  .tipsListText {
+    font-size: 14px;
+    color: #8c8c8c;
+  }
+}

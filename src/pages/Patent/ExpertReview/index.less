@@ -1,0 +1,385 @@
+@max-content-width: 1200px;
+@primary-color: #1677FF;
+@warning-color: #FAAD14;
+@bg-color: #F5F7FA;
+@card-border-color: #E4E7ED;
+@text-primary: #000A1AE3;
+@text-secondary: #666;
+
+.expertReviewContainer {
+  min-height: 100vh;
+  background: @bg-color;
+}
+
+// Content Styles
+
+.content {
+  max-width: @max-content-width;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  margin-bottom: 24px;
+
+  h4 {
+    margin: 0 0 8px 0;
+  }
+
+  .subTitle {
+    color: @text-secondary;
+  }
+}
+
+// Section Styles
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sectionIcon {
+  width: 32px;
+  height: 32px;
+  background: @primary-color;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+// Review Process Cards
+.processCard {
+  border-radius: 12px;
+  margin-bottom: 24px;
+
+  :global {
+    .ant-card-body {
+      padding: 24px;
+    }
+  }
+}
+
+.stepCard {
+  border-radius: 8px;
+  border-color: @card-border-color;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  :global {
+    .ant-card-body {
+      padding: 16px;
+    }
+  }
+}
+
+.stepCardActive {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ed 100%);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.stepNumber {
+  width: 28px;
+  height: 28px;
+  background: #E4E7ED;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  span {
+    color: @text-secondary;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.stepNumberActive {
+  background: @primary-color;
+
+  span {
+    color: #fff;
+  }
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stepTime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+
+  svg {
+    font-size: 12px;
+    color: @primary-color;
+  }
+
+  span {
+    font-size: 12px;
+    color: @primary-color;
+  }
+}
+
+.stepDesc {
+  font-size: 12px;
+  display: block;
+  color: @text-secondary;
+}
+
+// Current Review Card
+.reviewCard {
+  border-radius: 12px;
+  border: 1px solid @card-border-color;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.reviewHeader {
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reviewTitle {
+  h5 {
+    margin: 0 0 8px 0;
+  }
+}
+
+.reviewMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.expertInfoSection {
+  padding: 24px;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.expertInfoSectionTitle {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.expertInfoContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.expertAvatar {
+  width: 56px;
+  height: 56px;
+  background: @primary-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :global {
+    .ant-avatar {
+      background: @primary-color;
+    }
+  }
+}
+
+.expertDetails {
+  flex: 1;
+}
+
+.expertNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.ratingTag {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  border-radius: 4px;
+
+  svg {
+    font-size: 12px;
+  }
+}
+
+.expertTitle {
+  display: block;
+  font-size: 13px;
+  color: @text-secondary;
+}
+
+// Review Status
+.reviewStatus {
+  padding: 24px;
+}
+
+.statusBox {
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #FFE082;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid @warning-color;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.statusText {
+  flex: 1;
+}
+
+.statusTitle {
+  font-weight: 600;
+  display: block;
+  color: #D48806;
+}
+
+.statusDesc {
+  font-size: 13px;
+  color: #D48806;
+}
+
+// Progress Grid
+.progressGrid {
+  :global {
+    .ant-col {
+      padding: 0 8px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.progressItem {
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #F0F0F0;
+  background: #FAFAFA;
+}
+
+.progressLabel {
+  font-size: 13px;
+  color: @text-secondary;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.progressCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #E4E7ED;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    font-size: 20px;
+    color: #BFBFBF;
+  }
+}
+
+// About Section
+.aboutSection {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+  border: none;
+
+  :global {
+    .ant-card-body {
+      padding: 24px;
+    }
+  }
+}
+
+.aboutTitle {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.aboutItem {
+  padding: 12px;
+}
+
+.aboutItemTitle {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.aboutItemDesc {
+  margin: 0;
+  font-size: 13px;
+  color: @text-secondary;
+}

@@ -40,6 +40,34 @@ export const menus = [
           },
         ]
       },
+      {
+        name: '专利',
+        path: '/patent',
+        component: '@/pages/Patent',
+        icon: <FileDoneOutlined />,
+        routes: [
+          {
+            name: '专利撰写',
+            path: '/patent/write',
+            component: '@/pages/Patent/PatentWrite',
+          },
+          {
+            name: '任务管理',
+            path: '/patent/task',
+            component: '@/pages/Patent/TaskManagement',
+          },
+          {
+            name: '专家审核',
+            path: '/patent/review',
+            component: '@/pages/Patent/ExpertReview',
+          },
+          {
+            name: '用户中心',
+            path: '/patent/userCenter',
+            component: '@/pages/Patent/UserCenter',
+          },
+        ],
+      },
     ],
   },
   {
