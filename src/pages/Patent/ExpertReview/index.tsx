@@ -228,7 +228,7 @@ const ExpertReviewPage: React.FC = () => {
   return (
     <>
       <div className={styles.headerNav}>
-        <HeaderNav activePath="/patent/task" />
+        <HeaderNav activePath="/patent/review" />
       </div>
       <div className={styles.content}>
         {/* Page Header */}
