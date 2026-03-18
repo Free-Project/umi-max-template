@@ -1,9 +1,10 @@
-/**
- * Runtime configuration
- * Global initial data configuration
- * For more information, see: https://umijs.org/docs/api/runtime-config#getinitialstate
- */
-
-export async function getInitialState(): Promise<{ name: string }> {
-  return { name: 'Umi Max App' };
-}
+export default (initialState: API.UserInfo) => {
+  // Define project access control based on initial state here for centralized management
+  // Reference: https://umijs.org/docs/max/access
+  const canSeeAdmin = !!(
+    initialState && initialState.name !== 'dontHaveAccess'
+  );
+  return {
+    canSeeAdmin,
+  };
+};

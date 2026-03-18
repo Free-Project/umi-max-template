@@ -15,7 +15,7 @@ import styles from './index.less';
 import setting from './setting';
 
 /**
- * MaxLayout 是一个基于 ProLayout 的布局组件，提供了更多的定制化选项和功能，适用于需要高度定制化的应用场景。
+ * MaxLayout is a layout component based on ProLayout that provides more customization options and features, suitable for application scenarios that require high customization.
  */
 export default () => {
   const location = useLocation();
@@ -69,7 +69,7 @@ export default () => {
                             width: 300,
                           }}
                         >
-                          <div>热门产品</div>
+                          <div>Popular Products</div>
                           {new Array(3).fill(1).map((name, index) => {
                             return (
                               <div
@@ -83,7 +83,7 @@ export default () => {
                                   }}
                                 >
                                   <div>Ant Design</div>
-                                  <div>杭州市较知名的 UI 设计语言</div>
+                                  <div>A well-known UI design language from Hangzhou</div>
                                 </div>
                               </div>
                             );
@@ -98,7 +98,7 @@ export default () => {
                         color: token.colorTextHeading,
                       }}
                     >
-                      <span> 企业级资产中心</span>
+                      <span>Enterprise Asset Center</span>
                       <CaretDownFilled />
                     </div>
                   </Popover>
@@ -111,7 +111,7 @@ export default () => {
             avatarProps={{
               src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
               size: 'small',
-              title: '哈七',
+              title: 'HaQi',
               render: (_prs, dom) => {
                 return (
                   <Dropdown
@@ -120,7 +120,7 @@ export default () => {
                         {
                           key: 'logout',
                           icon: <LogoutOutlined />,
-                          label: '退出登录',
+                          label: 'Logout',
                         },
                       ],
                     }}
@@ -157,7 +157,7 @@ export default () => {
                           }}
                         />
                       }
-                      placeholder="搜索方案"
+                      placeholder="Search solutions"
                       variant="borderless"
                     />
                   </div>

@@ -20,51 +20,51 @@ export default {
     {
       icon: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
       title: 'Ant Design',
-      desc: '杭州市较知名的 UI 设计语言',
+      desc: 'A well-known UI design language from Hangzhou',
       url: 'https://ant.design',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/antfincdn/FLrTNDvlna/antv.png',
       title: 'AntV',
-      desc: '蚂蚁集团全新一代数据可视化解决方案',
+      desc: "Ant Group's new generation data visualization solution",
       url: 'https://antv.vision/',
       target: '_blank',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/antfincdn/upvrAjAPQX/Logo_Tech%252520UI.svg',
       title: 'Pro Components',
-      desc: '专业级 UI 组件库',
+      desc: 'Professional UI component library',
       url: 'https://procomponents.ant.design/',
     },
     {
       icon: 'https://img.alicdn.com/tfs/TB1zomHwxv1gK0jSZFFXXb0sXXa-200-200.png',
       title: 'umi',
-      desc: '插件化的企业级前端应用框架。',
+      desc: 'Plugin-based enterprise-level frontend application framework.',
       url: 'https://umijs.org/zh-CN/docs',
     },
 
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/8a74c1d3-16f3-4719-be63-15e467a68a24/km0cv8vn_w500_h500.png',
       title: 'qiankun',
-      desc: '可能是你见过最完善的微前端解决方案🧐',
+      desc: "Perhaps the most complete micro-frontend solution you've ever seen 🧐",
       url: 'https://qiankun.umijs.org/',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg',
-      title: '语雀',
-      desc: '知识创作与分享工具',
+      title: 'Yuque',
+      desc: 'Knowledge creation and sharing tool',
       url: 'https://www.yuque.com/',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/rmsportal/LFooOLwmxGLsltmUjTAP.svg',
       title: 'Kitchen ',
-      desc: 'Sketch 工具集',
+      desc: 'Sketch toolkit',
       url: 'https://kitchen.alipay.com/',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/d3e3eb39-1cd7-4aa5-827c-877deced6b7e/lalxt4g3_w256_h256.png',
       title: 'dumi',
-      desc: '为组件开发场景而生的文档工具',
+      desc: 'Documentation tool designed for component development scenarios',
       url: 'https://d.umijs.org/zh-CN',
     },
   ],
@@ -116,18 +116,18 @@ export default {
     );
   },
 
-  // 默认设置
-  navTheme: 'light', // 整体风格：light | dark | realDark
-  colorPrimary: '#1677FF', // 主题色
-  layout: 'mix', // 布局模式: side | top | mix
-  siderMenuType: 'group', // 侧边菜单类型: group | sub
-  contentWidth: 'Fluid', // 内容区域宽度: Fluid | Fixed
-  fixedHeader: true, // 固定 Header
-  fixSiderbar: true, // 固定 Siderbar
-  splitMenus: true, // 拆分菜单，当 layout 为 mix 时有效
-  // headerRender: undefined, // 头部渲染函数
-  // menuRender: undefined, // 菜单渲染函数
-  // menuHeaderRender: undefined, // 菜单头渲染函数
-  // footerRender: undefined, // 页脚渲染函数
-  // colorWeak: undefined, // 色弱模式
+  // Default settings
+  navTheme: 'light', // Overall style：light | dark | realDark
+  colorPrimary: '#1677FF', // Theme color
+  layout: 'mix', // Layout mode: side | top | mix
+  siderMenuType: 'group', // Sidebar menu type: group | sub
+  contentWidth: 'Fluid', // Content area width: Fluid | Fixed
+  fixedHeader: true, // Fixed Header
+  fixSiderbar: true, // Fixed Sidebar
+  splitMenus: true, // Split menus, effective when layout is mix
+  // headerRender: undefined, // Header render function
+  // menuRender: undefined, // Menu render function
+  // menuHeaderRender: undefined, // Menu header render function
+  // footerRender: undefined, // Footer render function
+  // colorWeak: undefined, // Color weak mode
 } as ProSettings;
