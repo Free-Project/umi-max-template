@@ -20,6 +20,26 @@
   }
 }
 
+:global {
+  .max-layout-layout-apps-popover {
+    .max-layout-layout-apps-default-content-list-item {
+      & > a {
+        width: 100%;
+        & > div {
+          min-width: 0;
+          & > span {
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
 .layout-menu-card-popover {
   display: flex;
   padding: 32px 40px;
