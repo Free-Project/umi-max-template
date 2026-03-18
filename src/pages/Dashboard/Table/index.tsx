@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react';
 import services from '@/services/demo';
 import {
   ActionType,
@@ -8,6 +7,7 @@ import {
   ProTable,
 } from '@ant-design/pro-components';
 import { Button, Divider, Drawer, message } from 'antd';
+import React, { useRef, useState } from 'react';
 import CreateForm from './components/CreateForm';
 import UpdateForm, { FormValueType } from './components/UpdateForm';
 
@@ -15,29 +15,29 @@ const { addUser, queryUserList, deleteUser, modifyUser } =
   services.UserController;
 
 /**
- * 添加节点
+ * Add node
  * @param fields
  */
 const handleAdd = async (fields: API.UserInfo) => {
-  const hide = message.loading('正在添加');
+  const hide = message.loading('Adding...');
   try {
     await addUser({ ...fields });
     hide();
-    message.success('添加成功');
+    message.success('Added successfully');
     return true;
   } catch (error) {
     hide();
-    message.error('添加失败请重试！');
+    message.error('Add failed, please try again!');
     return false;
   }
 };
 
 /**
- * 更新节点
+ * Update node
  * @param fields
  */
 const handleUpdate = async (fields: FormValueType) => {
-  const hide = message.loading('正在配置');
+  const hide = message.loading('Configuring...');
   try {
     await modifyUser(
       {
@@ -51,32 +51,32 @@ const handleUpdate = async (fields: FormValueType) => {
     );
     hide();
 
-    message.success('配置成功');
+    message.success('Configured successfully');
     return true;
   } catch (error) {
     hide();
-    message.error('配置失败请重试！');
+    message.error('Configuration failed, please try again!');
     return false;
   }
 };
 
 /**
- *  删除节点
+ * Delete node
  * @param selectedRows
  */
 const handleRemove = async (selectedRows: API.UserInfo[]) => {
-  const hide = message.loading('正在删除');
+  const hide = message.loading('Deleting...');
   if (!selectedRows) return true;
   try {
     await deleteUser({
       userId: selectedRows.find((row) => row.id)?.id || '',
     });
     hide();
-    message.success('删除成功，即将刷新');
+    message.success('Deleted successfully, refreshing soon');
     return true;
   } catch (error) {
     hide();
-    message.error('删除失败，请重试');
+    message.error('Delete failed, please try again');
     return false;
   }
 };
@@ -91,34 +91,34 @@ const TableList: React.FC<unknown> = () => {
   const [selectedRowsState, setSelectedRows] = useState<API.UserInfo[]>([]);
   const columns: any[] = [
     {
-      title: '名称',
+      title: 'Name',
       dataIndex: 'name',
-      tip: '名称是唯一的 key',
+      tip: 'Name is the unique key',
       formItemProps: {
         rules: [
           {
             required: true,
-            message: '名称为必填项',
+            message: 'Name is required',
           },
         ],
       },
     },
     {
-      title: '昵称',
+      title: 'Nick Name',
       dataIndex: 'nickName',
       valueType: 'text',
     },
     {
-      title: '性别',
+      title: 'Gender',
       dataIndex: 'gender',
       hideInForm: true,
       valueEnum: {
-        0: { text: '男', status: 'MALE' },
-        1: { text: '女', status: 'FEMALE' },
+        0: { text: 'Male', status: 'MALE' },
+        1: { text: 'Female', status: 'FEMALE' },
       },
     },
     {
-      title: '操作',
+      title: 'Action',
       dataIndex: 'option',
       valueType: 'option',
       render: (_: any, record: any) => (
@@ -129,10 +129,10 @@ const TableList: React.FC<unknown> = () => {
               setStepFormValues(record);
             }}
           >
-            配置
+            Configure
           </a>
           <Divider type="vertical" />
-          <a href="">订阅警报</a>
+          <a href="">Subscribe Alerts</a>
         </>
       ),
     },
@@ -141,11 +141,11 @@ const TableList: React.FC<unknown> = () => {
   return (
     <PageContainer
       header={{
-        title: 'CRUD 示例',
+        title: 'CRUD Example',
       }}
     >
       <ProTable<API.UserInfo>
-        headerTitle="查询表格"
+        headerTitle="Query Table"
         actionRef={actionRef}
         rowKey="id"
         search={{
@@ -157,7 +157,7 @@ const TableList: React.FC<unknown> = () => {
             type="primary"
             onClick={() => handleModalVisible(true)}
           >
-            新建
+            Create
           </Button>,
         ]}
         request={async (params, sorter, filter) => {
@@ -182,9 +182,9 @@ const TableList: React.FC<unknown> = () => {
         <FooterToolbar
           extra={
             <div>
-              已选择{' '}
+              Selected{' '}
               <a style={{ fontWeight: 600 }}>{selectedRowsState.length}</a>{' '}
-              项&nbsp;&nbsp;
+              items&nbsp;&nbsp;
             </div>
           }
         >
@@ -195,9 +195,9 @@ const TableList: React.FC<unknown> = () => {
               actionRef.current?.reloadAndRest?.();
             }}
           >
-            批量删除
+            Batch Delete
           </Button>
-          <Button type="primary">批量审批</Button>
+          <Button type="primary">Batch Approve</Button>
         </FooterToolbar>
       )}
       <CreateForm
