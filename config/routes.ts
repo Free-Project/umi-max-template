@@ -1,22 +1,8 @@
-import { menus } from './menus';
-
-// 菜单转换成路由
-const transMenuToRoute = (routes: any[]): any[] => {
-  return routes.map((route: any) => {
-    const newRoute = { ...route };
-    if ('icon' in route) {
-      delete newRoute.icon;
-    }
-    if (Array.isArray(route.routes)) {
-      transMenuToRoute(route.routes);
-    }
-    return newRoute;
-  });
-};
+import { menus as routes } from './menus';
 
 /**
- * 菜单中的icon是ReactNode
- * 而Layout中需要的route必须是纯Json数据
- * 因此需要转成纯Json数据
+ * Because routes in Umi's config must be pure JSON data and cannot directly import tsx files,
+ * and since icon is a ReactNode, it needs to be configured in menus.tsx.
+ * Therefore, we need to import menus first, then export routes to convert it to pure JSON data.
  */
-export const routes = transMenuToRoute(menus);
+export { routes };

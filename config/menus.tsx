@@ -1,9 +1,11 @@
 import React from 'react';
 import {
-  FileDoneOutlined,
+  AppstoreOutlined,
+  DashboardOutlined,
+  ExperimentOutlined,
+  ExportOutlined,
   HomeOutlined,
-  ProductOutlined,
-  TableOutlined
+  SafetyOutlined,
 } from '@ant-design/icons';
 
 export const menus = [
@@ -13,45 +15,58 @@ export const menus = [
   },
   {
     path: '/',
-    component: '@/layouts/FrontLayout',
+    component: '@/layouts/MaxLayout',
     routes: [
       {
-        name: '首页',
+        name: 'Home',
         path: '/home',
         component: './Home',
         icon: <HomeOutlined />,
       },
       {
-        name: 'Table',
-        path: '/table',
-        component: './Table',
-        icon: <TableOutlined />,
-      },
-      {
-        name: '权限演示',
-        path: '/access',
-        component: './Access',
-        icon: <FileDoneOutlined />,
+        name: 'Dashboard',
+        path: '/dashboard',
+        component: './Dashboard',
+        icon: <DashboardOutlined />,
         routes: [
           {
-            name: '权限演示-子页面',
-            path: '/access/child',
-            component: './Access/Child',
+            path: '/dashboard/table',
+            name: 'Table',
+            component: './Dashboard/Table',
           },
-        ]
+        ],
       },
-    ],
-  },
-  {
-    path: '/admin',
-    // name: '后台管理',
-    component: '@/layouts/AdminLayout',
-    routes: [
       {
         path: '/admin',
-        name: '后台管理',
-        component: '@/pages/Admin',
-        icon: <ProductOutlined />,
+        name: 'Admin',
+        component: './Admin',
+        icon: <AppstoreOutlined />,
+        routes: [
+          {
+            path: '/admin/sub-page',
+            name: 'Sub page',
+            component: './Admin/SubPage',
+          },
+        ],
+      },
+      {
+        name: 'Access',
+        path: '/access',
+        component: './Access',
+        icon: <SafetyOutlined />,
+      },
+      {
+        name: 'Test',
+        path: '/test',
+        component: './Test',
+        icon: <ExperimentOutlined />,
+      },
+      {
+        name: 'Link',
+        path: '/href',
+        href: 'https://umijs.org/',
+        icon: <ExportOutlined />,
+        isExternal: true,
       },
     ],
   },

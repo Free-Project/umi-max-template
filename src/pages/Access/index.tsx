@@ -1,4 +1,5 @@
-import { PageContainer } from '@ant-design/pro-components';
+import React from 'react';
+import { PageContainer, ProCard } from '@ant-design/pro-components';
 import { Access, useAccess } from '@umijs/max';
 import { Button } from 'antd';
 
@@ -8,12 +9,14 @@ const AccessPage: React.FC = () => {
     <PageContainer
       ghost
       header={{
-        title: '权限示例',
+        title: 'Access Demo',
       }}
     >
-      <Access accessible={access.canSeeAdmin}>
-        <Button>示例</Button>
-      </Access>
+      <ProCard>
+        <Access accessible={access.canSeeAdmin}>
+          <Button>Demo</Button>
+        </Access>
+      </ProCard>
     </PageContainer>
   );
 };

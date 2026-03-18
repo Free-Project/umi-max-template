@@ -10,7 +10,7 @@ export const waitTime = async (time: number = 100) => {
   await waitTimePromise(time);
 };
 
-// 生成UUID
+// Generate UUID
 export const generateUUID = () => {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0;
@@ -19,7 +19,7 @@ export const generateUUID = () => {
   });
 };
 
-// 将对象的所有键转换为小写
+// Convert all keys of an object to lowercase
 export const keysToLowerCase = (obj: { [key: string]: any }) => {
   const newObj: any = {};
   for (const key in obj) {
@@ -34,7 +34,7 @@ export const isPlainObject = (obj: any) => {
   return Object.prototype.toString.call(obj) === '[object Object]';
 };
 
-// 判断是否为JSON字符串
+// Check if a string is JSON
 export const isJSONString = (str: string) => {
   if (typeof str !== 'string') {
     return false;
@@ -47,7 +47,7 @@ export const isJSONString = (str: string) => {
   }
 };
 
-// 判断是否为合法链接
+// Check if a string is a valid URL
 export const isValidHttpUrl = (str: any) => {
   try {
     const url = new URL(str);
@@ -57,12 +57,12 @@ export const isValidHttpUrl = (str: any) => {
   }
 };
 
-// 判断是否为数字, 包括'123'
+// Check if value is numeric, including '123'
 export const isNumeric = (value: any) => {
   return /^\s*-?\d+(\.\d+)?\s*$/.test(String(value));
 };
 
-// 获取当前用户
+// Get current user
 export const getUser = () => {
   const { user = {} } = window as any;
   return user;

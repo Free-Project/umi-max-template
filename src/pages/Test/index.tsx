@@ -1,14 +1,15 @@
 import React from 'react';
 import { ProCard } from '@ant-design/pro-components';
+import styles from './index.less'
 
-const AdminPage = () => {
+const TestPage = () => {
   return (
     <ProCard>
-      <div style={{ padding: 40, maxWidth: 400 }}>
-        Admin page
+      <div className={styles.test}>
+        Test page
       </div>
     </ProCard>
   );
 };
 
-export default AdminPage;
+export default TestPage;

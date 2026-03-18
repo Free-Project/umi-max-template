@@ -1,7 +1,9 @@
 {
   "extends": "./src/.umi/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "jsx": "react",
+    "noUnusedLocals": true,
   },
   "include": ["mock/**/*", "src/**/*", "test/**/*", "config/**/*"]
 }

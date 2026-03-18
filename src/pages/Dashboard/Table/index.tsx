@@ -1,14 +1,13 @@
+import React, { useRef, useState } from 'react';
 import services from '@/services/demo';
 import {
   ActionType,
   FooterToolbar,
   PageContainer,
   ProDescriptions,
-  ProDescriptionsItemProps,
   ProTable,
 } from '@ant-design/pro-components';
 import { Button, Divider, Drawer, message } from 'antd';
-import React, { useRef, useState } from 'react';
 import CreateForm from './components/CreateForm';
 import UpdateForm, { FormValueType } from './components/UpdateForm';
 
@@ -90,7 +89,7 @@ const TableList: React.FC<unknown> = () => {
   const actionRef = useRef<ActionType>();
   const [row, setRow] = useState<API.UserInfo>();
   const [selectedRowsState, setSelectedRows] = useState<API.UserInfo[]>([]);
-  const columns: ProDescriptionsItemProps<API.UserInfo>[] = [
+  const columns: any[] = [
     {
       title: '名称',
       dataIndex: 'name',
@@ -122,7 +121,7 @@ const TableList: React.FC<unknown> = () => {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
-      render: (_, record) => (
+      render: (_: any, record: any) => (
         <>
           <a
             onClick={() => {

@@ -1,5 +1,5 @@
 import { defineConfig } from '@umijs/max';
-import { routes }  from './routes';
+import { routes } from './routes';
 
 export default defineConfig({
   antd: {},
@@ -8,5 +8,8 @@ export default defineConfig({
   initialState: {},
   request: {},
   routes,
-  npmClient: 'npm'
+  // close default layout, 
+  // use custom layout in src/layouts/MatrixLayout/index.tsx
+  layout: false, 
+  npmClient: 'npm',
 });
