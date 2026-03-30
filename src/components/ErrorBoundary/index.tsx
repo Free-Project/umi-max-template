@@ -1,67 +1,94 @@
-import { history } from '@umijs/max';
-import { Button, Result } from 'antd';
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Button, Empty, Space, Typography } from 'antd';
+import React, { Component } from 'react';
+import styles from './index.less';
 
-interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
+const { Title, Text } = Typography;
+
+interface ErrorBoundaryProps {
+  children?: React.ReactNode;
+  onRetry?: () => void;
 }
 
 interface State {
-  hasError: boolean;
-  error: Error | null;
+  error?: Error;
+  info: {
+    componentStack: string;
+  };
 }
 
-class ErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('Uncaught error:', error, errorInfo);
-    // logErrorToService(error, errorInfo);
-  }
-
-  handleReset = () => {
-    this.setState({ hasError: false, error: null });
+/**
+ * 错误边界组件
+ */
+export default class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  State
+> {
+  state: State = {
+    error: undefined,
+    info: {
+      componentStack: '',
+    },
   };
 
-  handleGoHome = () => {
-    history.push('/');
-  };
+  componentDidCatch(error: any, info: any) {
+    this.setState({ error, info });
+  }
 
   render() {
-    if (this.state.hasError) {
-      if (this.props.fallback) {
-        return this.props.fallback;
-      }
+    const { children, onRetry } = this.props;
+    const { error, info } = this.state;
 
+    if (error) {
       return (
-        <Result
-          status="500"
-          title="An error occurred on the page"
-          subTitle={this.state.error?.message || 'Unknown error'}
-          extra={
-            <>
-              <Button type="primary" onClick={this.handleReset}>
-                Try Again
+        <div className={styles['error-boundary-container']}>
+          <Empty
+            className={styles['error-info']}
+            image={<div className={styles['error-icon']}>🤔</div>}
+            description={
+              <>
+                <Title level={5}> There seems to be a minor issue with component rendering </Title>
+                <div>
+                  <Text type={'secondary'}>
+                    But don't worry, your data is still intact. 
+                  </Text>
+                  <br />
+                  <div style={{ marginTop: 8 }}>
+                    <Text type={'secondary'}>
+                      You can try to retry. If the issue persists after retrying, please contact customer service
+                    </Text>
+                  </div>
+                </div>
+              </>
+            }
+          >
+            <Space>
+              <Button type="primary" onClick={onRetry}>
+                Retry
               </Button>
-              <Button style={{ marginLeft: 16 }} onClick={this.handleGoHome}>
-                Back to Home
-              </Button>
-            </>
-          }
-        />
+            </Space>
+          </Empty>
+          <div className={styles['error-detail-content']}>
+            <div className={styles['error-item-name']}>
+              <Text>
+                Error message：
+                {error?.toString()}
+              </Text>
+            </div>
+            <div className={styles['error-item-component-stack']}>
+              {info?.componentStack.split('\n').map((i, index) => (
+                <div
+                  key={i + index}
+                  className={styles['error-item-component_stack-item']}
+                >
+                  <Text type={'secondary'}>{i}</Text>
+                </div>
+              )) ?? null}
+            </div>
+          </div>
+        </div>
       );
     }
 
-    return this.props.children;
+    return <>{children}</>;
   }
 }
-
-export default ErrorBoundary;

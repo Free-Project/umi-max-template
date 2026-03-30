@@ -13,7 +13,7 @@ const AccessPage: React.FC = () => {
       }}
     >
       <ProCard>
-        <Access accessible={access.canSeeAdmin}>
+        <Access accessible={!!access.canAdmin}>
           <Button>Demo</Button>
         </Access>
       </ProCard>

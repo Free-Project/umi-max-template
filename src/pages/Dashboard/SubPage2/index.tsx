@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AdminSubPage = () => {
+const SubPage2 = () => {
   return (
     <div style={{ padding: 40, maxWidth: 400 }}>
-      Admin sub page
+      Sub page 2
     </div>
   );
 };
 
-export default AdminSubPage;
+export default SubPage2;

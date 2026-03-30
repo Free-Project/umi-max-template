@@ -1,5 +1,7 @@
+import { LogoutOutlined } from '@ant-design/icons';
 import type { ProSettings } from '@ant-design/pro-components';
 import { history } from '@umijs/max';
+import { Dropdown } from 'antd';
 import React from 'react';
 import { menus } from '../../../config/menus';
 
@@ -105,17 +107,34 @@ export default {
       {itemDom}
     </div>
   ),
+  avatarProps: {
+    src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
+    size: 'small',
+    title: 'HaQi',
+    render: (_p: any, dom: React.ReactNode) => {
+      return (
+        <Dropdown
+          menu={{
+            items: [
+              {
+                key: 'logout',
+                icon: <LogoutOutlined />,
+                label: 'Logout',
+              },
+            ],
+          }}
+        >
+          {dom}
+        </Dropdown>
+      );
+    },
+  },
   menuFooterRender: (menuFooterProps: any) => {
     if (menuFooterProps?.collapsed) {
       return undefined;
     }
-    return (
-      <>
-        <p>©{new Date().getFullYear()} Umi Max App</p>
-      </>
-    );
+    return <>©{new Date().getFullYear()} Umi Max App</>;
   },
-
   // Default settings
   navTheme: 'light', // Overall style：light | dark | realDark
   colorPrimary: '#1677FF', // Theme color

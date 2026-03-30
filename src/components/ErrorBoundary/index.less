@@ -1,0 +1,28 @@
+.error-boundary-container {
+  position: relative;
+
+  .error-icon {
+    font-size: 68px;
+  }
+
+  .error-detail-content {
+    width: 1024px;
+    margin: 24px auto;
+    background: rgba(0, 0, 0, 2%);
+    padding: 24px 40px;
+
+    .error-item-name {
+      font-weight: 500;
+    }
+
+    .error-item-component-stack {
+      height: calc(100vh - 380px);
+      overflow: auto;
+
+      .error-item-component-stack-item {
+        text-align: left;
+        font-size: 10px;
+      }
+    }
+  }
+}

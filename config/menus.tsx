@@ -4,8 +4,11 @@ import {
   DashboardOutlined,
   ExperimentOutlined,
   ExportOutlined,
+  FundProjectionScreenOutlined,
   HomeOutlined,
+  ProfileOutlined,
   SafetyOutlined,
+  TableOutlined
 } from '@ant-design/icons';
 
 export const menus = [
@@ -26,26 +29,35 @@ export const menus = [
       {
         name: 'Dashboard',
         path: '/dashboard',
-        component: './Dashboard',
+        // component: './Dashboard',
         icon: <DashboardOutlined />,
         routes: [
+          
           {
-            path: '/dashboard/table',
-            name: 'Table',
-            component: './Dashboard/Table',
+            name: 'Sub page1',
+            path: '/dashboard/sub-page1',
+            component: './Dashboard/SubPage1',
+            icon: <FundProjectionScreenOutlined />
+          },
+          {
+            name: 'Sub page2',
+            path: '/dashboard/sub-page2',
+            component: './Dashboard/SubPage2',
+            icon: <ProfileOutlined />
           },
         ],
       },
       {
-        path: '/admin',
         name: 'Admin',
-        component: './Admin',
+        path: '/admin',
+        // component: './Admin',
         icon: <AppstoreOutlined />,
         routes: [
           {
-            path: '/admin/sub-page',
-            name: 'Sub page',
-            component: './Admin/SubPage',
+            path: '/admin/table',
+            name: 'Table',
+            component: './Admin/Table',
+            icon: <TableOutlined />
           },
         ],
       },
