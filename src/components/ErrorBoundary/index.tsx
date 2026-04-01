@@ -49,7 +49,7 @@ export default class ErrorBoundary extends Component<
                 <Title level={5}> There seems to be a minor issue with component rendering </Title>
                 <div>
                   <Text type={'secondary'}>
-                    But don't worry, your data is still intact. 
+                    But don&apos;t worry, your data is still intact. 
                   </Text>
                   <br />
                   <div style={{ marginTop: 8 }}>

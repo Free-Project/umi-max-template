@@ -108,6 +108,7 @@ export default () => {
       ) : undefined,
       <QuestionCircleFilled key="QuestionCircleFilled" />,
       <PlusCircleFilled
+        key="plusCircleFilled"
         style={{
           color: token.colorPrimary,
           fontSize: 24,
