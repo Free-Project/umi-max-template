@@ -7,12 +7,10 @@ import { request } from 'umi';
  */
 
 export async function getInitialState(): Promise<{ [key: string]: any }> {
-  const currentUser = await request('/api/getCurrentUser').then(res =>{
-     res.json()
-  });
-  console.log('currentUser', currentUser);
+  const currentUser = await request('/api/getCurrentUser');
   return {
     name: 'Umi Max App',
     currentUser,
   };
 }
+

@@ -61,16 +61,20 @@ const handleUpdate = async (fields: FormValueType) => {
 };
 
 /**
- * Delete node
+ * Delete nodes
  * @param selectedRows
  */
 const handleRemove = async (selectedRows: API.UserInfo[]) => {
   const hide = message.loading('Deleting...');
-  if (!selectedRows) return true;
+  if (!selectedRows || selectedRows.length === 0) return true;
   try {
-    await deleteUser({
-      userId: selectedRows.find((row) => row.id)?.id || '',
-    });
+    await Promise.all(
+      selectedRows.map((row) =>
+        deleteUser({
+          userId: row.id || '',
+        }),
+      ),
+    );
     hide();
     message.success('Deleted successfully, refreshing soon');
     return true;
